@@ -1,0 +1,4 @@
+(executable
+ (public_name ocaml_caqti_demo)
+ (name main)
+ (libraries ocaml_caqti_demo))
