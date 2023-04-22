@@ -1,0 +1,12 @@
+services:
+  db:
+    container_name: caqti_demo_db
+    build: ./db/docker
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: 9sako6
+      POSTGRES_DB: caqti_demo_db
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d

@@ -1,4 +1,11 @@
 (executable
  (public_name ocaml_caqti_demo)
  (name main)
- (libraries ocaml_caqti_demo))
+ (preprocess
+  (pps lwt_ppx ppx_yojson_conv))
+ (libraries ocaml_caqti_demo caqti-lwt caqti caqti-driver-postgresql))
+
+(env
+ (dev
+  (flags
+   (:standard -w -32))))

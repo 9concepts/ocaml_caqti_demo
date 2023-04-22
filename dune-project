@@ -7,9 +7,9 @@
 (source
  (github username/reponame))
 
-(authors "Author Name")
+(authors "9sako6")
 
-(maintainers "Maintainer Name")
+(maintainers "9sako6")
 
 (license LICENSE)
 
@@ -19,7 +19,17 @@
  (name ocaml_caqti_demo)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune)
+ (depends
+  ocaml
+  ocaml-lsp-server
+  ocamlformat
+  dune
+  lwt
+  lwt_ppx
+  caqti
+  caqti-lwt
+  caqti-driver-postgresql
+  ppx_yojson_conv)
  (tags
   (topics "to describe" your project)))
 
