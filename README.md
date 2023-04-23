@@ -1,5 +1,7 @@
 # Example of ocaml-caqti
 
+:camel:
+
 # Requirements
 
 - [lwt](https://ocsigen.org/lwt/latest/manual/manual)

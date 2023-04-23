@@ -26,9 +26,12 @@
   dune
   lwt
   lwt_ppx
-  caqti
-  caqti-lwt
-  caqti-driver-postgresql
+  (caqti
+   (= 1.9.0))
+  (caqti-lwt
+   (= 1.9.0))
+  (caqti-driver-postgresql
+   (= 1.9.0))
   ppx_yojson_conv)
  (tags
   (topics "to describe" your project)))
