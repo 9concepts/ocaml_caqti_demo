@@ -1,2 +1,5 @@
 (library
- (name ocaml_caqti_demo))
+ (name ocaml_caqti_demo)
+ (preprocess
+  (pps lwt_ppx ppx_yojson_conv))
+ (libraries caqti-lwt caqti caqti-driver-postgresql))

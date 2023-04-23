@@ -1,0 +1,6 @@
+(library
+ (name unit_test)
+ (libraries ocaml_caqti_demo caqti-lwt caqti caqti-driver-postgresql)
+ (inline_tests)
+ (preprocess
+  (pps lwt_ppx ppx_yojson_conv ppx_expect)))

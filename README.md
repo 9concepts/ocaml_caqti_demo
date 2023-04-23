@@ -29,3 +29,9 @@ opam switch remove .
 docker compose up
 dune exec ocaml_caqti_demo
 ```
+
+Run tests.
+
+```bash
+ dune test
+```

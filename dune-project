@@ -32,7 +32,9 @@
    (= 1.9.0))
   (caqti-driver-postgresql
    (= 1.9.0))
-  ppx_yojson_conv)
+  ppx_yojson_conv
+  (ppx_expect :with-test)
+  (ppx_inline_test :with-test))
  (tags
   (topics "to describe" your project)))
 
