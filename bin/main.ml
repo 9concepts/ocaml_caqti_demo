@@ -16,8 +16,8 @@ module Query = struct
       "SELECT user_id, name, email FROM users"
 end
 
-let run_plus () =
-  let%lwt result = Db.find Query.plus (7, 13) in
+let run_plus x y () =
+  let%lwt result = Db.find Query.plus (x, y) in
   Caqti_lwt.or_fail result
 
 let run_select_users () =
@@ -28,7 +28,7 @@ let _ = print_newline ()
 
 let _ =
   Lwt_main.run
-    (let%lwt result = run_plus () in
+    (let%lwt result = run_plus 7 13 () in
      Lwt_io.printl (Printf.sprintf "%d" result))
 
 let _ =
