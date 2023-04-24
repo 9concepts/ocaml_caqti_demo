@@ -27,3 +27,20 @@ let%test_module "select_users" =
       [%expect
         {| [[1,"test-user-1","test-1@example.com"],[2,"test-user-2","test-2@example.com"],[3,"test-user-3","test-3@example.com"],[4,"test-user-4","test-4@example.com"]] |}]
   end)
+
+let%test_module "insert_user" =
+  (module struct
+    let%expect_test "insert a user" =
+      Lwt_main.run
+        (let%lwt () =
+           Ocaml_caqti_demo.Driver.insert_user
+             (module Db)
+             "new-user" "new@example.com"
+         in
+         let%lwt users = Ocaml_caqti_demo.Driver.select_users (module Db) in
+         [%yojson_of: (int * string * string) list] users
+         |> Yojson.Safe.to_string |> print_endline;
+         Lwt.return_unit);
+      [%expect
+        {| [[1,"test-user-1","test-1@example.com"],[2,"test-user-2","test-2@example.com"],[3,"test-user-3","test-3@example.com"],[4,"test-user-4","test-4@example.com"],[5,"new-user","new@example.com"]] |}]
+  end)
